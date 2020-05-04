@@ -1,0 +1,157 @@
+@import './colors.scss';
+
+/* CONTAINERS */
+.pageHeader {
+    position: fixed;
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    height: 60px;
+    width: 100vw;
+    //background-color: $light_green;
+    background-color: $light_gray;
+
+    // img
+    .anebyhusLogo {
+        width: auto;
+        height: 30%;
+    }
+}
+
+.loginContainer {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+
+    .houseImages {
+        object-fit: cover;
+        opacity: 0.9;
+    }
+
+    .anebyhusLogo {
+        width: 480px;
+        height: auto;
+        padding-bottom: 30px;
+    }
+
+    main {
+        position: absolute;
+        width: 550px;
+        height: 60vh;
+        border-radius: 2px;
+        // border: 1px solid $light_gray_fade;
+        //background-color: $light_green;
+        background-color: white;
+        padding: 50px 90px 50px 90px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        -webkit-box-shadow: 0.5px 0.5px 4px 0.5px $light_gray;
+        box-shadow: 0.5px 0.5px 4px 0.5px $light_gray;
+    }
+}
+
+.credentials {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    .textInput {
+        position: relative;
+        font-size: 12pt;
+        // font-weight: 600;
+        padding-left: 10px;
+        height: 40px;
+        justify-content: center;
+        margin-top: 25px;
+        background-color: white;
+        border: 1px solid $light_gray_fade;
+        border-radius: 2px;
+        width: 100%; 
+        cursor: text;
+
+        &.errorMess {
+            border: 1px solid red;
+        }
+
+        input {
+            background-color: transparent;
+            border: none;
+            width: 100%;
+            height: 100%;
+            font-size: 10pt;
+
+            &:focus {
+                border: none;
+                outline: none;
+            }
+        }
+    
+        .placeholder {
+            position: absolute;
+            top: 10px;
+            font-size: 13pt;
+            color: $light_gray;
+            background-color: transparent;
+            transition: all 0.2s ease;
+    
+            &.toLabel {
+                top: -20px;
+                left: 0;
+                font-size: 10pt;
+                color: $dark_gray;
+                font-weight: 600;
+            }
+        }
+    }
+
+    .loginErrorMessage {
+        position: relative;
+        text-align: left;
+        width: 100%;
+        color: red;
+        font-size: 8pt;
+        padding: 4px;
+        //transition: all 0.2s ease;
+    }
+
+    #loginButton {
+        user-select: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 70%;
+        cursor: pointer;
+        color: white;
+        font-weight: 600;
+        padding: 10px;
+        margin-top: 8px;
+        border-radius: 2px;
+        transition: white;
+        background-color: $petrol_blue;
+
+        &:hover, &:focus {
+          opacity: 80%;
+        //   border: 1px solid $light_gray;
+        }
+    }
+
+    h3 {
+        color: $light_gray;
+        font-size: 12px;
+        margin-top: 20px;
+        &:hover{
+            cursor: pointer;
+            color: $light_gray_fade;
+        }
+    }
+}

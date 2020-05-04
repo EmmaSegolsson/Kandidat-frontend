@@ -1,0 +1,392 @@
+@import './colors.scss';
+
+.tabContainer {
+    overflow: hidden;
+    display: inline-flexbox;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 1s ease;
+    position: absolute;
+
+
+    /* LOGOS and ICONS */
+    .logoContainer {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding-top: 15px;
+    }
+
+    .customerLogo {
+        width: 50px;
+        height: auto;
+        // border: 1px dotted blue;
+        margin: auto;
+        padding-top: 10px;
+    }
+    .customersLogo {
+        width: 80px;
+        height: auto;
+        margin: auto;
+        padding-bottom: 10px;
+        padding-top: 10px;
+    }
+
+    .anebyhusLogo {
+        width: 50%;
+        height: auto;
+        padding-bottom: 30px;
+        // border: 1px dotted blue;
+    }
+
+    /* ------------------- */
+    /* ------ Admin ------ */
+    /* ------------------- */
+
+    #adminTab {
+        // background-color: red;
+        width: 100%;
+        height: 100%;
+    }
+
+    /* -------------------- */
+    /* --- New Customer --- */
+    /* -------------------- */
+
+    #newCustomerTab {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    .createdMessHidden {
+        height: 40px;
+        -webkit-transition: 0.5s ease;
+        transition: 0.5s ease;
+    }
+
+    .userCreated {
+        position: relative;
+        align-items: center;
+        width: 100%;
+        height: 40px;
+        text-align: left;
+        background-color:hsl(120,50%,90%);
+        border-radius: 2px;
+        padding-left: 10px;
+        padding-top: 11px;
+        color: green;
+
+        &.unvalidUser {
+            background-color: white;
+            color: red;
+            padding-left: 0;
+        }
+    }
+
+
+    /* ------------------- */
+    /* ---- Customers ---- */
+    /* ------------------- */
+    #customersTab {
+        // background-color: yellow;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    #customerContainer {
+        width: auto;
+        height: 285px;
+        overflow: scroll;
+        //box-shadow: 0 0 5px $light_gray inset;
+        border-top: 1px solid $light_gray_fade;
+        border-bottom: 1px solid $light_gray_fade;
+        padding: 5px;
+
+        .customer {
+            height: 20px;
+            width: auto;
+        }
+    }
+
+    .tableHeader {
+        height: 30px;
+        padding-top: 3px;
+        width: auto;
+        border-top: 1px solid $light_gray_fade;
+    
+        .heaederID {
+            padding-left: 7%;
+            display: inline-block;
+            color: $petrol_blue;
+            font-size: 14pt;
+        }
+    
+        .headerName{
+            padding-left: 11%;
+            display: inline-block;
+            color: $petrol_blue;
+            font-size: 14pt;
+        }
+    }
+
+    ul {
+        width: 100%;
+        //border: 1px solid blue;
+
+        li {
+            //border: 1px dotted red;
+            height: 50px;
+            text-align: center;
+
+        }
+    }
+
+    .List {
+        border-bottom: 1px solid whitesmoke;
+        width: 100%;
+        height: 50px;
+        display: flex;
+        cursor: pointer;
+        align-items: center;
+
+        .penImage {
+            opacity: 0;
+            height: 14px;
+            width: auto;
+            padding-right: 20px;
+        }
+
+        &:hover {
+            background-color: whitesmoke;
+
+            .penImage {
+                opacity: 100;
+            }
+        }
+
+        .id{
+            //border: 1px dotted blue;
+            width: 100px;
+        }
+
+        .username{
+            //border: 1px dotted red;
+            width: 100%;
+            text-align: left;
+            padding-left: 40px;
+        }
+
+        .penImage {
+            height: 12px;
+            padding-right: 15px;
+        }
+    }
+
+    /* ------------------------- */
+    /* ---- Manage Customer ---- */
+    /* ------------------------- */
+    .manageDiv {
+        padding: 5px;
+
+        p {
+            padding-top: 15px;
+            display: block;
+        }
+    }
+    .credentials {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 0 15px 0 15px;
+
+        .textInput {
+            position: relative;
+            font-size: 12pt;
+            // font-weight: 600;
+            padding-left: 10px;
+            height: 40px;
+            justify-content: center;
+            margin-top: 10px;
+            background-color: white;
+            border: 1px solid $light_gray_fade;
+            border-radius: 2px;
+            width: 100%; 
+            cursor: text;
+        }
+    }
+
+    .buttonContainer {
+        display: flex;
+        padding: 0px 20px 0 20px;
+        justify-content: space-between;
+    }
+    .borderButton {
+        border: 1px solid $petrol_blue;
+        height: 40px;
+        width: 150px;
+        color: $petrol_blue;
+        text-align: center;
+        padding-top: 8px;
+        border-radius: 2px;
+
+        &:hover {
+            background-color: whitesmoke;
+        }
+    }
+
+    .deleteButton {
+        height: 40px;
+        width: 150px;
+        color: white;
+        background-color:$petrol_blue;
+        text-align: center;
+        padding-top: 8px;
+        cursor: pointer;
+        border-radius: 2px;
+        transition: 0.2s;
+
+        &:hover {
+            background-color: #8B0000;
+        }
+    }
+
+    .changeButton {
+        height: 40px;
+        width: 150px;
+        color: white;
+        background-color: $petrol_blue;
+        text-align: center;
+        padding-top: 8px;
+        cursor: pointer;
+    }
+
+    #changePassword {
+        margin-top: 10px;
+        margin-bottom: 30px;
+    }
+}
+
+#infoForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+
+    .textInput {
+        width: 100%;
+        border-radius: 2px;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid $light_gray_fade;
+
+        &.validText {
+            //border: 1px solid green;
+        }
+
+        &.unvalidText {
+            border: 1px solid red;
+        }
+    }
+
+    input {
+        width: 100%;
+        height: 30px;
+        border: none;
+
+        &:focus {
+            border: none;
+            outline: none;
+        }
+    }
+}
+
+#createButton {
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    cursor: pointer;
+    color: white;
+    font-weight: 600;
+    padding: 15px;
+    border-radius: 2px;
+    transition: white;
+    background-color: $petrol_blue;
+
+    &:hover, &:focus {
+    opacity: 80%;
+    }
+}
+
+  
+.confirmLogoutOverlayDelete {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    text-align: center;
+    left: 0;
+    top: 0;
+
+    &.hidden {
+        height: 0;
+        width: 0;
+        z-index: -10;
+    }
+
+    .confirmationDiv {
+        position: fixed;
+        height: 200px;
+        width: 350px;
+        background-color:white;
+        border: 1px solid ededed;
+        border-radius: 2px; 
+        padding: 40px;
+        z-index: 20;
+    }
+
+    .buttonContainer {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        //border: 1px dotted blue;
+        padding-top: 30px;
+        z-index: 20;
+    }
+
+    #cancelButton {
+        background-color: white;
+        border: 1px solid $petrol_blue;
+        color: $petrol_blue;
+    }
+
+    .confirmationsButton {
+        box-sizing: border-box;
+        cursor: pointer;
+        height: 35px;
+        width: 120px;
+        margin: 10px;
+        border-radius: 2px;
+        padding-top: 8px;
+        background-color: $petrol_blue;
+        color: white;
+        font-weight: bold;
+
+        &.hidden {
+            height: 0;
+            width: 0;
+        }
+    }
+}

@@ -1,0 +1,141 @@
+@import './colors.scss';
+
+.homeContainer {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    main {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        height: 60vh;
+        width: 55vw;
+        align-items: center;
+        justify-content: center;
+        border-top: 1px solid whitesmoke;
+        border-right: 1px solid whitesmoke;
+        border-bottom: 1px solid whitesmoke;
+        border-radius: 2px;
+        background-color: white;
+        -webkit-box-shadow: 1px 1px 8px 1px $light_gray;
+        box-shadow: 1px 1px 8px 1px $light_gray;
+    }
+}
+
+.menuOptions {
+    height: 100%;
+    width: 22%;
+    background-color: #e0e0e0;
+    // border: 1px dotted red;
+    border:none;
+
+    .tab {
+        height: 25%;
+        padding-left: 20px;
+        text-align: left;
+        padding-top: 50px;
+        background-color: #e0e0e0;
+        color: $light_gray;
+        transition: all ease 0.8s;
+        border-left: 2px solid #e0e0e0;
+        display: block; // ta bort linkstylen
+
+        &:hover {
+            cursor: pointer;
+            background-color: #ededed;
+            border-left: 2px solid #ededed;
+        }
+
+        &.activeTab {
+            background-color: white;
+            color: $dark_gray;
+            border-left: 2px solid $petrol_blue;
+        }
+    }
+}
+
+.inputContainer {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    width: 80%;
+    padding: 5px 20px 20px 20px;
+    align-items: center;
+
+    .rightSideContainer {
+        overflow: auto;
+        position: relative;
+        display: flex;
+        // border: 1px dotted blue;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.confimLogoutOverlay {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    text-align: center;
+
+   &.hidden {
+        height: 0;
+        width: 0;
+        z-index: -10;
+    } 
+
+    .confimationDiv {
+        position: fixed;
+        height: 200px;
+        width: 350px;
+        background-color:white;
+        border: 1px solid ededed;
+        border-radius: 2px; 
+        padding: 40px;
+        z-index: 20;
+    }
+
+    .buttonContainer {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        //border: 1px dotted blue;
+        padding-top: 30px;
+        z-index: 20;
+    }
+
+    #cancelButton {
+        background-color: white;
+        border: 1px solid $petrol_blue;
+        color: $petrol_blue;
+    }
+
+    .confimationsButton {
+        box-sizing: border-box;
+        cursor: pointer;
+        height: 35px;
+        width: 120px;
+        margin: 10px;
+        border-radius: 2px;
+        padding-top: 8px;
+        background-color: $petrol_blue;
+        color: white;
+        font-weight: bold;
+
+        &.hidden {
+            height: 0;
+            width: 0;
+        }
+    }
+}
+
+ 
