@@ -226,7 +226,7 @@
         display: flex;
         justify-content: flex-end;
         padding-top: 10px;
-        padding-right: 5px;
+        padding-right: 10px;
 
         .userImage {
             height: 100px;
@@ -255,7 +255,7 @@
         justify-content: space-evenly;
 
         .changePassword {
-            //border: 1px dotted green;
+            //border: 1px solid #ededed;
             width: 50%;
             height: 100%;
             margin-bottom: 20px;
@@ -263,7 +263,7 @@
         }
 
         .addBlueprint {
-            //border: 1px dotted blue;
+            //border: 1px solid #ededed;
             width: 50%;
             height: 100%;
             float: right;
@@ -271,28 +271,31 @@
         }
 
         .editForm {
-            padding:5px;
+            padding:10px;
 
             .inputDefault {
-                border: 1px solid #ededed;
+                border: 1px solid $light_gray_fade;
                 padding: 8px;
                 margin-bottom: 20px;
                 width: 100%;
+                border-radius: 2px;
                 
                 &:focus {
-                    border: none;
+                    //border: none;
+                    outline: none;
                 }
             }
 
             #changePasswordButton {
                 border: 1px solid $petrol_blue;
                 height: 30px;
-                width: 150px;
+                width: 140px;
                 color: $petrol_blue;
                 text-align: center;
                 padding-top: 4px;
                 border-radius: 2px;
                 font-size: 11pt;
+                float: right;
         
                 &:hover {
                     background-color: whitesmoke;
@@ -344,7 +347,7 @@
 
     .buttonContainer {
         display: flex;
-        padding: 30px 20px 0 20px;
+        padding: 30px 10px 0 10px;
         justify-content: space-between;
     }
     .borderButton {

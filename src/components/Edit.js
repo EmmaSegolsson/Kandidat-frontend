@@ -11,6 +11,9 @@ const Edit = props => {
   const [newPass, setNewPass] = useState("");
   const [confirmPass, setConfirmPass] = useState("");
   const [popup, setPopup] = useState(false);
+  const [houseName, setHouseName] = useState("");
+  const [houseImage, setHouseImage] = useState("");
+  const [houseModel, setHouseModel] = useState("");
   
   useEffect(() => {
     fetch('https://kandidat-test.herokuapp.com/edit/' + '?id=' + props.match.params.id, {
@@ -61,6 +64,12 @@ const Edit = props => {
       })
   }
 
+  const addModel  = () => {
+    document.getElementById("houseName").value = ""; 
+    document.getElementById("houseImage").value = "";
+    document.getElementById("houseModel").value = "";
+  }
+
  return (
   
   <div>
@@ -94,16 +103,18 @@ const Edit = props => {
         <div className='textFields'>
           <div className='changePassword'>
             <form className='editForm'>
-            <input className='inputDefault'
-                placeholder={user.password}
+              <input className='inputDefault'
+                type="password"
+                id="changepassword"
+                placeholder="Nytt lösenord*"
+                onChange={e => setNewPass(e.target.value)}
               />
               <input className='inputDefault'
-                placeholder='Nytt lösenord*'
+                type="password"
+                id="confirmchangepassword"
+                placeholder="Bekräfta lösenord*"
+                onChange={e => setConfirmPass(e.target.value)}
               />
-              <input className='inputDefault'
-                placeholder='Bekräfta lösenord*'
-              />
-
               <div id='changePasswordButton' onClick={ () => changePass() }>
                 Byt lösenord
               </div> 
@@ -114,15 +125,24 @@ const Edit = props => {
             <form className='editForm'>
               <input className='inputDefault'
                 placeholder='Husnamn*'
+                type="text"
+                id="houseName"
+                onChange={e => setHouseName(e.target.value)}
               />
               <input className='inputDefault'
                 placeholder='Bildmodell på huset'
+                type="text"
+                id="houseImage"
+                onChange={e => setHouseImage(e.target.value)}
               />
               <input className='inputDefault'
                 placeholder='Länk till husritning*'
+                type="text"
+                id="houseModel"
+                onChange={e => setHouseModel(e.target.value)}
               />
 
-              <div id='changePasswordButton' onClick={ () => changePass() }>
+              <div id='changePasswordButton' onClick={ () => addModel() }>
                 Addera husmodell
               </div> 
             </form>
@@ -149,45 +169,4 @@ const Edit = props => {
  
 export default Edit; 
 
-
-
-// <div className='manageDiv'>
-
-// <div className='headerContainer'>
-//   <div className='editHeader'>
-//     user
-//   </div>
-// </div>
-
-// {/* <h2 style={{padding:20, textAlign: 'center'}}>Hantera användare: {user.username}</h2> */}
-// <div className='bodyContainer'>
-//   <form className='credentials edit'>
-
-//     <div className='textInput'>
-//       <label htmlFor="password"></label>
-//         <input className='passwordInput'
-//           type="password"
-//           id="changepassword"
-//           placeholder="Nytt lösenord*"
-//           onChange={e => setNewPass(e.target.value)}
-//         />
-//     </div>
-
-//    <div className='textInput' >
-//       <label htmlFor="password"></label>
-//         <input className='passwordInput'
-//           type="password"
-//           id="confirmchangepassword"
-//           placeholder="Bekräfta lösenord*"
-//           onChange={e => setConfirmPass(e.target.value)}
-//         />
-//     </div> 
-//     <div style={{display: 'flex', justifyContent: 'flex-end', width: '100%'}}>
-//       <div id='changePassword' className='borderButton' onClick={ () => changePass() }>
-//         Byt lösenord
-//       </div> 
-//     </div>
-//   </form>
-// </div>
-// </div> 
 
