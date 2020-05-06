@@ -40,7 +40,7 @@ class NewCustomer extends Component {
     let validUsername = document.getElementById("usernameInput");
     let validPassword = document.getElementById("passwordInput");
 
-    if(validUsername.value != "" && validPassword.value != ""){
+    if(this.state.stringTest !== "" && validUsername.value !== "" && validPassword.value !== "" && this.state.stringTest !== "unvalidText"){
       this.setState({stringTest: "validText"});
       //tömmer input fälten
       document.getElementById("usernameInput").value = "";
@@ -59,9 +59,8 @@ class NewCustomer extends Component {
 
   createUser = (e) => {
     e.preventDefault();
-    this.validText();
 
-    if(this.state.username != "" && this.state.password != ""){
+    if(this.state.username !== "" && this.state.password !== ""){
       fetch("https://kandidat-test.herokuapp.com/register", {
         method: "POST",
         credentials: "include",
@@ -70,19 +69,26 @@ class NewCustomer extends Component {
       })
 
       .then(response => {
-        if(response.status !== 200){
+        if(response.status !== 200){          
           throw "Failed creating user!"
         }
         console.log("yayy user created!!")
           this.setState({password: "", error: true});
           this.setState({password: "", error: true});
+          this.setState({stringTest: "validText"});
+          this.validText();
       })
 
       .catch(err => {
           //felmeddelande: 
-          this.props.loggedIn(false);
+          //this.props.loggedIn(false);
+          this.setState({stringTest: "unvalidText"});
           console.log(err);
+          this.validText();
       })
+    }else{
+      this.setState({stringTest: "unvalidText"});
+      this.validText();
     }
   }
 
