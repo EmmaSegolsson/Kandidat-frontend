@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import userLogo from '../assets/user.svg';
 import '../styles/tab.scss';
 
@@ -11,9 +11,9 @@ const Edit = props => {
   const [newPass, setNewPass] = useState("");
   const [confirmPass, setConfirmPass] = useState("");
   const [popup, setPopup] = useState(false);
-  const [houseName, setHouseName] = useState("");
-  const [houseImage, setHouseImage] = useState("");
-  const [houseModel, setHouseModel] = useState("");
+  // const [houseName, setHouseName] = useState("");
+  // const [houseImage, setHouseImage] = useState("");
+  // const [houseModel, setHouseModel] = useState("");
   
   useEffect(() => {
     fetch('https://kandidat-test.herokuapp.com/edit/' + '?id=' + props.match.params.id, {
@@ -127,19 +127,19 @@ const Edit = props => {
                 placeholder='Husnamn*'
                 type="text"
                 id="houseName"
-                onChange={e => setHouseName(e.target.value)}
+                //onChange={e => setHouseName(e.target.value)}
               />
               <input className='inputDefault'
                 placeholder='Bildmodell på huset'
                 type="text"
                 id="houseImage"
-                onChange={e => setHouseImage(e.target.value)}
+                //onChange={e => setHouseImage(e.target.value)}
               />
               <input className='inputDefault'
                 placeholder='Länk till husritning*'
                 type="text"
                 id="houseModel"
-                onChange={e => setHouseModel(e.target.value)}
+                //onChange={e => setHouseModel(e.target.value)}
               />
 
               <div id='changePasswordButton' onClick={ () => addModel() }>

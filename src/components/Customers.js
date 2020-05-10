@@ -1,9 +1,8 @@
-import React, { useState, useEffect, Component } from 'react';
-import { Redirect, Link, Switch, Route } from 'react-router-dom'
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom'
 import '../styles/tab.scss';
 import users from '../assets/users.svg';
 import pen from '../assets/pen.png';
-import Edit from './Edit';
 
 const Customers = props => { 
 
@@ -73,7 +72,7 @@ const Customers = props => {
           <div id='customerContainer'>
             <div className='customer'>
               <ul id='students'>
-                {displayCustomers()}
+                {/* {displayCustomers()} */}
               </ul>
             </div>
           </div>

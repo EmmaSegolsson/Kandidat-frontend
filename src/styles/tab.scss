@@ -81,7 +81,7 @@
 
         &.unvalidUser {
             background-color: white;
-            color: red;
+            color: orange;
             padding-left: 0;
         }
     }
@@ -191,26 +191,6 @@
     /* ------------------------- */
     /* --------- Edit ---------- */
     /* ------------------------- */
-    // .headerContainer {
-    //     width: 100%;
-    //     height: auto;
-    //     position: relative;
-    //     padding-right: 20px;
-
-    //     .editHeader {
-    //         position: absolute;
-    //         right: 0;
-    //         height: 100px;
-    //         width: 200px;
-    //         margin-right: 15px;
-    //         border: 1px solid $light_green;;
-    //     }
-    // }
-
-    // .bodyContainer{
-    //     border: 1px solid blue;
-    //     position: flex;
-    // }
     .editBody {
         //border: 1px dotted blue;
         width: 100%;
@@ -296,6 +276,7 @@
                 border-radius: 2px;
                 font-size: 11pt;
                 float: right;
+                cursor: pointer;
         
                 &:hover {
                     background-color: whitesmoke;
@@ -416,7 +397,7 @@
         }
 
         &.unvalidText {
-            border: 1px solid red;
+            border: 1px solid orange;
         }
     }
 

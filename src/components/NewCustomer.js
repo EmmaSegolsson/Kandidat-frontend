@@ -3,6 +3,9 @@ import '../styles/tab.scss';
 import user from '../assets/user.svg';
 import createdLogo from '../assets/success.png';
 
+import { faCheckCircle, faExclamationTriangle } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 class NewCustomer extends Component { 
 
 
@@ -45,7 +48,7 @@ class NewCustomer extends Component {
       //tömmer input fälten
       document.getElementById("usernameInput").value = "";
       document.getElementById("passwordInput").value = "";
-      // timer på "Användare skapad diven"
+      //timer på "Användare skapad diven"
       setTimeout(() => {
         this.setState({stringTest: ""})
       }, 1200)
@@ -106,12 +109,13 @@ class NewCustomer extends Component {
             {
               this.state.stringTest === "validText" ? 
                 <div className="userCreated">
-                  <img src={createdLogo} style={{height: 16}} />
+                  <div style={{height: 16, display: 'inline'}}><FontAwesomeIcon icon={faCheckCircle} /></div>
                   <h5 style={{position: 'absolute', display: 'inline', paddingLeft: 8, fontWeight: 'normal', fontSize: 16 }}>Användare skapad!</h5>
                 </div>
               :
               this.state.stringTest === "unvalidText" ?
                 <div className='userCreated unvalidUser'>
+                  <div style={{paddingLeft: '10px', height: 16, display: 'inline'}}><FontAwesomeIcon icon={faExclamationTriangle} /></div>
                   <h5 style={{position: 'absolute', display: 'inline', paddingLeft: 8, fontWeight: 'normal', fontSize: 16 }}>Ogiltig text!</h5>
                 </div> 
               :
