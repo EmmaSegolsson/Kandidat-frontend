@@ -10,16 +10,13 @@ import Edit from './Edit';
 
 const Home = props => {
   const [login, setLogin] = useState(true);
-  const [tab, setTab] = useState(window.location.href);
+  const [tab, setTab] = useState(window.location.href + `/home`);
   const [popup, setPopup] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [webpage, setWebpage] = useState(window.location.href);
 
   const confirmLogout = () => {
-    
-    console.log("loading e ", loading)
-
     logoutHandler(setLogin, setLoading);
-    console.log("loading e ", loading)
   }
 
 
@@ -52,9 +49,9 @@ const Home = props => {
         <main>
 
           <div className='menuOptions'>
-            <Link to={`/home`} className={tab === 'http://localhost:3000/home' ? 'tab activeTab' : 'tab'} onClick={ e=> setTab('http://localhost:3000/home')}>Din profil</Link>
-            <Link to={`/home/newcustomer`} className={tab === 'http://localhost:3000/home/newcustomer' ? 'tab activeTab' : 'tab'} onClick={ e=> setTab('http://localhost:3000/home/newcustomer')}>Ny kund</Link>
-            <Link to={`/home/customers`} className={tab === 'http://localhost:3000/home/customers' ? 'tab activeTab' : 'tab'} onClick={ e=> setTab('http://localhost:3000/home/customers')}>Kunder</Link>
+            <Link to={`/home`} className={tab === webpage + `/home` ? 'tab activeTab' : 'tab'} onClick={ e=> setTab(webpage + '/home')}>Din profil</Link>
+            <Link to={`/home/newcustomer`} className={tab === webpage + `/home/newcustomer` ? 'tab activeTab' : 'tab'} onClick={ e=> setTab(webpage + `/home/newcustomer`)}>Ny kund</Link>
+            <Link to={`/home/customers`} className={tab === webpage + `/home/customers` ? 'tab activeTab' : 'tab'} onClick={ e=> setTab(webpage + `/home/customers`)}>Kunder</Link>
             <div className='tab' onClick={ () => setPopup(true) } >
                 <p>Logga ut</p>
             </div>

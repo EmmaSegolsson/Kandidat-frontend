@@ -72,7 +72,7 @@ const Customers = props => {
           <div id='customerContainer'>
             <div className='customer'>
               <ul id='students'>
-                {/* {displayCustomers()} */}
+                {displayCustomers()}
               </ul>
             </div>
           </div>
