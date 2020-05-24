@@ -39,8 +39,10 @@ class Login extends Component {
     e.preventDefault();
 
     //headers behövs för : express veta göra vad med datan, POST, PATCH, DELETE troligtvis - testa
+    const proxyurl = "https://cors-anywhere.herokuapp.com/";
+    const url = "https://kandidat-test.herokuapp.com/login/admin"
     this.setState({loading: true});
-    fetch("https://kandidat-test.herokuapp.com/login/admin", {
+    fetch(proxyurl + url, {
       method: "POST",
       credentials: "include",
       headers: {'Content-Type': 'application/json'},
