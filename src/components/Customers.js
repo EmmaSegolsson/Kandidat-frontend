@@ -24,11 +24,11 @@ const Customers = props => {
   
 
   const displayCustomers = () => {
-    return data.map((customer) => {
+    return data.map((customer, index) => {
       const { user_id, username } = customer //destructuring
       return (
         // <tr key={id} onClick={handleClick}>
-        <Link to={`/home/customers/${user_id}`}>
+        <Link to={`/home/customers/${user_id}`} key={index}>
           <li onClick={handleClick}>
             <div className='List'>
               <div className='id'>
