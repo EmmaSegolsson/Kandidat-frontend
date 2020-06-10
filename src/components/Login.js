@@ -39,9 +39,8 @@ class Login extends Component {
     e.preventDefault();
 
     //headers behövs för : express veta göra vad med datan, POST, PATCH, DELETE troligtvis - testa
-    const url = "https://kandidat-test.herokuapp.com/login/admin"
     this.setState({loading: true});
-    fetch(url, {
+    fetch("https://kandidat-test.herokuapp.com/login/admin", {
       method: "POST",
       credentials: "include",
       headers: {'Content-Type': 'application/json'},
